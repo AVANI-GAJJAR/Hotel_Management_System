@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+Employee Managment
+{% endblock title %}
+
+{% block body %}
+<h1><center></center></h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Mobile Number</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>Leaves</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        {% for x in mymembers %}
+        <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.age }}</td>
+        <td>{{ x.address }}</td>
+        <td>{{ x.mobile_number }}</td>
+        <td>{{ x.designation }}</td>
+        <td>{{ x.salary }}</td>
+        <td>{{ x.leaves }}</td>
+        <td><button type="button" class="btn btn-danger"><a href="delete/{{ x.id }}" style="color:white">Delete</a></button></td>
+        <td><button type="button" class="btn btn-success"><a href="update/{{ x.id }}" style="color:white">Update</a></button></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock body %}

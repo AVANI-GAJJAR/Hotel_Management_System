@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}
+Update
+{% endblock title %}
+
+{% block body %}
+<form action="updaterecord/{{ mymember.id }}"  method="post">
+  {% csrf_token %}
+<div class="container-fluid">
+    <div class="con-fluid mx-0">
+        <img src="https://source.unsplash.com/1500x150/?employee" >
+       
+            <h5 style="position: absolute;
+            top: 150px;
+            left: 80px;
+            color: white;
+            font-size: 35px">UPDATE EMPLOYEE DETAILS</h5>
+    </div>
+    <div class="mb-3 row my-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPassword" value="{{ mymember.name }}"  name="name">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Age:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="inputPassword " value="{{ mymember.age }}"  name="age">
+        </div>
+    </div>
+    <div class="mb-3 row ">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Address:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPassword" value="{{ mymember.address }}"  name="address">
+        </div>
+    </div>
+    <div class="mb-3 row ">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Mobile Number:</label>
+        <div class="col-sm-10">
+          <input type="phone2numeric" class="form-control" id="inputPassword" value="{{ mymember.mobile_number }}"  name="mobile_number">
+        </div>
+    </div>
+    <div class="mb-3 row ">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Designation:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPassword" value="{{ mymember.designation }}"  name="designation">
+        </div>
+    </div>
+    <div class="mb-3 row ">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Salary:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="inputPassword" value="{{ mymember.salary }}"  name="salary">
+        </div>
+    </div>
+    <div class="mb-3 row ">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Leaves:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPassword" value="{{ mymember.leaves }}"  name="leaves">
+        </div>
+    </div>
+</div>
+<center>
+  <input class="btn btn-primary" type="submit" value="Submit">
+</center>
+</form>
+{%endblock body%}
